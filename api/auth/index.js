@@ -54,7 +54,7 @@ function buildToken(user) {
         expiresIn: '1h'
     }
 
-    return jwt.sign(payload, 'secret', options)
+    return jwt.sign(payload, require('./secrets').secret, options)
 }
 
 module.exports = router
